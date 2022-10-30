@@ -1,0 +1,29 @@
+.contendor{
+    margin-left: 70px; 
+    width: 400px;
+    height: 70px;
+}
+
+button{
+    margin-left: 30px;
+    margin-top: 7px;
+    height: 40px;
+}
+
+.form{ 
+    display: flex; 
+    width: 400px;
+    margin-left: 500px;
+}
+
+/*----------------------------------     navbar    -------------------------------------*/
+
+.navbar-nav{
+    margin-right: 3%;
+}
+
+.nav-item{
+    margin-left: 31px;
+}
+
+/*--------------------------------------------------------------------------------------*/

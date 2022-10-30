@@ -1,0 +1,154 @@
+/* dialogo sin login */
+.noLogin{
+    margin-left: 30%;
+    width: 30%;
+    margin-top: 60px;
+    height: 300px;
+    border: 1px solid rgb(204, 182, 182);
+}
+.noLoginP{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+/* chat */
+.chat {
+    height: 370px; 
+    /* margin-right: 11%; */
+    margin-left: 12%;
+    margin-top: 20px;
+    border: 1px solid rgb(204, 182, 182);
+    width: 70%;
+    float: left;
+    display: inline;
+}
+.chat-mensaje{
+    margin-top: 20px;
+    margin-left: 14%;
+    margin-right: 14%;
+    height: 300px;
+    overflow:auto;
+    border: 1px solid rgb(204, 182, 182);
+}
+
+/* input  */
+
+.form {
+    width: 470px;
+    height: 90px; 
+    margin-top: 80px;
+    border: 1px solid rgb(204, 182, 182);
+    float: right;
+    display: inline;
+}
+
+.contenidoForm{
+    margin-left: 30px;
+    margin-top: 30px;
+    width: 540px;
+}
+
+/* mensajes de otros usuarios */
+
+.pLeft{
+    margin-left: 6%;
+    margin-top: 10px;
+    border: 1px solid rgb(204, 182, 182);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 74%;
+}
+.otromensaje{
+    margin-left: 20px;
+    height: auto;
+    overflow: auto;
+}
+.otroemail, .otromen{
+    display: inline;
+}
+.otrofech{
+    font-size: 12px;
+}
+
+
+/* mi mensaje */
+
+.pRight{
+    color: rgb(255, 72, 0);
+    cursor: pointer;
+    margin-left: 24%;
+    border: 1px solid rgb(204, 182, 182);
+    width: 74%;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.mimensaje{    
+    margin-left: 20px;
+    height: auto;
+    overflow: auto;
+}
+
+.miemail , .mimen{
+    display: inline;
+}
+
+.mifech{
+    font-size: 12px;
+}
+
+.pRight button{    
+    margin-left: 12px;
+    width: 85px;
+    height: 30px;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+}
+
+
+
+/*---------------------------------- ventana modal -------------------------------------*/
+
+.modal{
+    margin-top: 9%;
+    margin-left: 27%;
+    transition: all 0.6s;
+    width: 500px; 
+}
+
+.modal-body button{ /* boton 'atras' */
+    margin-left: 2px;
+    margin-top: -20px;
+}
+
+.modal-body{
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 460px;
+    /* border: 1px solid rgb(204, 182, 182); */
+}
+
+.vistaModal{
+    margin-left: 120px;
+    height: 90px;
+    width: 290px;
+    border: 1px solid rgb(204, 182, 182);
+    /* margin-top: -20px; */
+}
+
+.vistaModal button{
+    margin-left: 42px;
+}
+
+.vistaModal p{
+    margin-left: 22px;
+}
+
+
+/* .modal-dialog{
+    min-width: 50%;
+    min-width: 50%;
+} */
+
+

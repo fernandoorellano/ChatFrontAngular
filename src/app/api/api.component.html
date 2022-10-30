@@ -1,0 +1,90 @@
+<div *ngIf="authSvc.nombreEmail == ''" class="noLogin">
+    <div class="noLoginP">
+        <p>Todavia no estas logeado?</p>
+        <a routerLink="/login"><b>Ingresa a tu cuenta</b></a>
+    </div>
+</div>
+
+<div *ngIf="user$ | async as user">
+    <div class="chat">
+        <!-- <button (click)="scrollTo()">ScrolltoFooter</button> -->
+        <div class="chat-mensaje" id="app-mensajes">
+            <div *ngFor="let men of valorGet">
+                <div class="pLeft" *ngIf="men[0].nombre != authSvc.nombreEmail">
+                    <div class="otromensaje">
+                        <b>
+                        <p class="otroemail">{{men[0].nombre}} - </p>
+                        <p class="otromen">{{men[0].mensaje}}</p></b>
+                        <p class="otrofech">{{men[0].fecha | date : 'dd/M-HH:mm' }}</p>
+                    </div>
+                </div>
+                <div class="pRight" id="pRight1" *ngIf="men[0].nombre == authSvc.nombreEmail" (click)="mostrarBtns(men[1])">
+                    <div class="mimensaje">
+                        <b>
+                        <p class="miemail">{{men[0].nombre}} - </p>
+                        <p class="mimen">{{men[0].mensaje}}</p></b>
+                        <p class="mifech">{{men[0].fecha | date : 'dd/M-HH:mm' }}</p>
+                    </div>
+                    
+                    <div *ngIf="nuevaClave ==men[1]">
+                        <!-- ventana modal para borrar -->
+                        <button *ngIf="mostrarBtn" data-bs-toggle="modal" data-bs-target="#modalEditar2">
+                            <p>BORRAR</p>
+                        </button>
+                        <div class="modal fade" id="modalEditar2" aria-labelledby="exampleModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Volver
+                                        </button>
+                                        <div class="vistaModal">
+                                            <p>LO VAS A BORRAR, ESTAS SEGURO??</p>
+                                            <button (click)="borrarValoresApi(men[1])" data-bs-dismiss="modal">Borrar</button>
+                                            <button (click)="cancelar()" data-bs-dismiss="modal">Cancelar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ventana modal para editar -->
+                        <button *ngIf="mostrarBtn" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                            <p>Editar</p>
+                        </button>
+                        <div class="modal fade" id="modalEditar" aria-labelledby="exampleModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Volver
+                                        </button>
+                                        <div>
+                                            <p>Lo vas a editar</p>
+                                            <input type="text" [(ngModel)]="nuevoMensaje">
+                                            <button (click)="editValoresApi(nuevoMensaje, men[1])" data-bs-dismiss="modal">Confirmar</button>
+                                            <button (click)="cancelar()" data-bs-dismiss="modal">Cancelar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="footer"></div>
+    </div>
+
+    <div class="form">
+        <div class="contenidoForm">
+            <label>Escribi tu mensaje</label>
+            <input type="text" [(ngModel)]="srvApi.mensaje">
+            <button (click)="enviarAlaBD()">
+                ENVIAR
+            </button>
+            <!-- <button (click)="traerValoresApi()">Actualizar</button> -->
+        </div>
+    </div>
+</div>
+
+
+ 
